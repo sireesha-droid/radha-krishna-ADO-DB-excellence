@@ -1,5 +1,5 @@
 pool:
-  name: 'dev-pool'
+  name: 'dev-env01'
 
 stages:
 - stage: Deploy
@@ -11,9 +11,9 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'k8sconnection'
-        azureResourceGroup: 'dev-env'
-        kubernetesCluster: 'dev-cluster'
+        azureResourceGroup: 'dev-env1'
+        kubernetesCluster: 'dev-cluster1'
         namespace: 'three-tier'
         command: 'apply'
-        arguments: '-f DB/database.yml'
+        arguments: '-f DB /database.yml'
       displayName: 'Deploy MongoDB to Kubernetes'
